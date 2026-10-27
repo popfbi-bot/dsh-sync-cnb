@@ -1,0 +1,23 @@
+- insert:
+    - id: dsh-sync-cnb
+      name: dsh-sync-cnb
+      config:
+        provider: cnb
+        repoUrl: ''
+        branch: main
+        machineId: ''
+        slices:
+          skills: union
+          sessions: backup
+          settings: backup
+          plugins: backup
+        enabled:
+          skills: true
+          sessions: true
+          settings: true
+          plugins: true
+        autoSyncMinutes: 0
+        conflictMode: manual
+        snapshotRetention: 30
+        uploadSnapshotsToRemote: false
+        prMode: false

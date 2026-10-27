@@ -1,0 +1,41 @@
+{
+  "name": "dsh-sync-cnb",
+  "version": "0.1.0",
+  "description": "DSH multi-machine sync: one engine, CNB + GitHub (+ Gitee/GitLab/GitCode) backends. Keeps ~/.dsh consistent across machines without uploading secrets.",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "sync",
+    "cnb",
+    "github",
+    "multi-device"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*"
+  },
+  "scripts": {
+    "check": "for f in $(find src -name \"*.js\"); do node --check \"$f\" || exit 1; done",
+    "test": "node --test test/"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

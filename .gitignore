@@ -1,0 +1,11 @@
+# 本机运维笔记与启用片段：含本机绝对路径、内部镜像地址和凭据来源说明，
+# 不属于插件本体（package.json 的 files 字段也不包含它们），不进公开仓库。
+INSTALL-NOTES.md
+enable.patch.snippet.yml
+*.bak-*
+
+# 依赖与临时产物
+node_modules/
+dist/
+*.log
+.DS_Store
